@@ -2,10 +2,26 @@
 <center>By: Majid Joseph, Mostapha Rammo, Steven Bodnar, Abdul Abu Libda</center>
 
 ## Overview
-Dr. Kent had given us permission to use whatever tool we deemed to be necessary to complete the project. We decided that we would use OpenGL to accomplish certain aspects of the project, mainly to do with 3D operations, and SDL2 to handle some of the 2D operations. You may be thinking why not just use OpenGL for the entire project? We decided not to do this because we had already acquired a reasonable amount of experience in SDL2 and we wanted to incorporate it in someway. You will see two separate program submissions, one that is SDL2, and one that is OpenGL.
+The COMP-3520 Final Project outlined within is comprised of three components; 
 
-## Submission 1: SDL2
+ - A 3D OpenGL representation backed by C++ alongside the GLFW, GLM, and assimp libraries. 
+ - An SDL2 representation of commonly used primitives in computer graphics.
+ - An implementation of a Bezier surface produced using Java's Processing library in conjunction with OpenGL.
+
+This document will cover 
+
+
+
+
+## Submission 1: SDL2 - Graphics Primitives
 We used `STD_PollEvent` to listen for keyboard clicks and a canvas exit click. By doing this, we were able to display the display menu on the actual canvas, making it more elegant. A clipping window will be drawn under the text.
+
+#### CheckList
+ - 2D Clipping
+ - 2D Drawing of Objects
+ - 2D Clipping
+ - UI
+ - Basic Drawing of Objects
 
 #### Operations
 
@@ -25,4 +41,15 @@ We used `STD_PollEvent` to listen for keyboard clicks and a canvas exit click. B
 All Shapes that are drawn to the screen will be clipped against the clipping window using the [Liang–Barsky algorithm](https://en.wikipedia.org/wiki/Liang%E2%80%93Barsky_algorithm).
 
 ![](sdl.gif)
+
+## Submission 3: openGL/Processing - Bezier Surface
+There is an open source graphics library called [Processing](https://processing.org/). It is built off of java, and we were able to include the openGL library. Processing has a setup and draw function, the setup function is called once, while the draw is called constantly. To run this code on your own machine, you must download the [Processing](https://processing.org/download/) IDE first.
+
+The program will choose a number of random control points with each run. Once they are calculated, we compute the surface and store it in the surface array, of type Point. Once everything is calculated, we draw the control points and connect them with lines to outline the curvature, then the actual surface is drawn.
+
+#### CheckList
+ - Computed Surfaces (Bezier)
+ - Directional Light
+
+![](beziergif.gif)
 
